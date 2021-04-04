@@ -12,8 +12,8 @@ let cube = {
 }
 
 let map = {
-    width: 900,
-    height: 900
+    width: 950,
+    height: 950
 }
 
 function checkButton(event) {
@@ -29,8 +29,11 @@ function checkButton(event) {
     if (event.keyCode === 40) {
         // key: "ArrowDown"
 
-        if (cube.y < map.height) {
+        if (cube.y < map.height - cube.step) {
             cube.y += cube.step;
+        }
+        else {
+            cube.y += map.height - cube.y;
         }
     }
 
@@ -45,8 +48,11 @@ function checkButton(event) {
     if (event.keyCode === 39) {
         // key: "ArrowRight"
 
-        if (cube.x < map.width) {
+        if (cube.x < map.width - cube.step) {
             cube.x += cube.step;
+        }
+        else {
+            cube.x += map.width - cube.x;
         }
     }
 
