@@ -1,6 +1,6 @@
 let cube = {
-    x: 300,
-    y: 300,
+    x: Math.floor(Math.random() * 370 + 100),
+    y: Math.floor(Math.random() * 370 + 100),
     id: 'cube',
     width: 56,
     height: 56,
