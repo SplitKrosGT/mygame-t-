@@ -1,6 +1,6 @@
 let cube = {
-    x: Math.floor(Math.random() * 370 + 100),
-    y: Math.floor(Math.random() * 370 + 100),
+    x:0,
+    y: 0,
     id: 'cube',
     width: 56,
     height: 56,
@@ -10,12 +10,28 @@ let cube = {
 }
 
 let map = {
-    x: 100,
-    y: 100,
-    width: 470,
-    height: 470,
+    x: 0,
+    y: 0,
+    width: window.outerWidth,
+    height: window.outerHeight,
     color: '#f5f5f5'
 }
 
+let bots = [];
+
+let bot = {
+    x: 0,
+    y: 0,
+    id: 1,
+    width: 56,
+    height: 56,
+    trn: .25,
+    step: 56,
+    color: 'red'
+}
+
+bots.push(bot);
+
 renderMap(map);
-renderCube(cube);
+renderCube(spawnCube(map, cube));
+renderBots(bots);

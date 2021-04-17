@@ -80,3 +80,36 @@ function renderMap(map) {
     document.getElementById('map').style.height = map.height + 'px';
     document.getElementById('map').style.backgroundColor = map.color;
 }
+
+function spawnCube(map, cube) {
+    
+    let mapMinX = map.x;
+    let mapMaxX = map.x + map.width - cube.width;
+
+    let mapMinY = map.y;
+    let mapMaxY = map.y + map.height - cube.height;
+
+    cube.x = Math.round(mapMinX + Math.random() * (mapMaxX - mapMinX));
+    cube.y = Math.round(Math.random() * (mapMaxY - mapMinY) + mapMinY);
+
+    return cube;
+}
+
+function renderBots(bots) {
+    bots.map(bot => {
+        let div = document.createElement('div');
+        div.id = bot.id;
+        div.className = "bot";
+        document.body.append(div);
+        console.log(div);  
+        renderBot(bot); 
+    });
+}
+function renderBot(bot) {
+    document.getElementById(bot.id).style.top = bot.y + 'px';
+    document.getElementById(bot.id).style.left = bot.x + 'px';
+    document.getElementById(bot.id).style.transition = 'ease ' + bot.trn + 's';
+    document.getElementById(bot.id).style.width = bot.width + 'px';
+    document.getElementById(bot.id).style.height = bot.height + 'px';
+    document.getElementById(bot.id).style.backgroundColor = bot.color;
+}
