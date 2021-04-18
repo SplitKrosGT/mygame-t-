@@ -1,5 +1,5 @@
 let cube = {
-    x:0,
+    x: 0,
     y: 0,
     id: 'cube',
     width: 56,
@@ -12,8 +12,8 @@ let cube = {
 let map = {
     x: 0,
     y: 0,
-    width: window.outerWidth,
-    height: window.outerHeight,
+    width: window.innerWidth,
+    height: window.innerHeight,
     color: '#f5f5f5'
 }
 
@@ -30,8 +30,10 @@ let bot = {
     color: 'red'
 }
 
-bots.push(bot);
+for (let i = randomInteger(2,4); i != 0; i--) {
+    bots.push(bot);
+}
 
-renderMap(map);
-renderCube(spawnCube(map, cube));
+renderMap(map); // Рендер карты
+renderCube(spawnCube(map, cube)); // Рендер куба
 renderBots(bots);
