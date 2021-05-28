@@ -44,7 +44,8 @@ let buff = {
     height: 56,
     trn: .25,
     step: 56,
-    color: 'yellow'
+    color: 'yellow',
+    score: 0
 }
 
 // buffs.push(spawnCube(map, buff));

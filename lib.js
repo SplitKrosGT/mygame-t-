@@ -204,10 +204,5 @@ function initShot() {
 function shotBuff(buff) {
     console.log('shotBuff');
     document.getElementById('buff_' + buff.id).remove();
-}
-
-let score = 0;
-
-function scoreboard() {
-    ctx.fillText(score);
+    document.getElementById('Score_' + score)
 }
