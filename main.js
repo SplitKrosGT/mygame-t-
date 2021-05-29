@@ -56,3 +56,5 @@ renderCube(spawnCube(map, cube));
 // renderBuffs(buffs);
 
 let tike = setInterval(timeTike, 7000);
+
+let score = 0;

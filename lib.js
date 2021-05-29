@@ -204,5 +204,7 @@ function initShot() {
 function shotBuff(buff) {
     console.log('shotBuff');
     document.getElementById('buff_' + buff.id).remove();
-    document.getElementById('Score_' + score)
+    
+    score++;
+    document.getElementById("score").firstChild.data = score;
 }
